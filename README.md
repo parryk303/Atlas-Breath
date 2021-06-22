@@ -6,31 +6,31 @@ Imitation of AirBNB UI. Enter your selection of 10 locations in the Where are yo
 France
 ``
 ``
-Japan
-``
-``
-Egypt
-``
-``
-Spain
-``
-``
-San Francisco
+Cairo
 ``
 ``
 Vail
 ``
 ``
+Barcelona
+``
+``
 Denver
-``
-``
-Greece
 ``
 ``
 London
 ``
 ``
 New York
+``
+``
+San Francisco
+``
+``
+Greece
+``
+``
+Tokyo
 ``
 
 # Set Up Local Host
