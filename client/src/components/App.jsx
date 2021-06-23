@@ -103,18 +103,37 @@ class App extends React.Component {
   }
 
   render() {
-    if (this.state.screenWidth < 744) {
+    if (this.state.screenWidth < 800 && this.state.searchResults.length === 0) {
       return (
-        <div>
+        <div className="containter">
+          <Search searchHandler={this.searchHandler} />
           <PhoneListing
             searchResults={this.state.searchResults}
             handleSelect={this.handleSelect}
             handleLocation={this.handleLocation}
           />
-          <PhoneSearch searchHandler={this.searchHandler} />
+          <p style={{ backgroundImage: 'url(https://a0.muscache.com/pictures/8e18e2c9-5909-4026-8157-0ebfeee8e412.jpg)', height: '500px' }} />
+          <div id='searchTips'>
+            <h3 style={{ color: '#FD385C'}}>Search Our Top Locations</h3>
+            <h6>France • Cairo • Vail • Barcelona • Denver • London • New York • San Francisco • Greece • Tokyo</h6>
+          </div>
         </div>
       );
     }
+
+    if (this.state.screenWidth < 800 && this.state.searchResults.length > 0) {
+      return (
+        <div className="containter">
+          <Search searchHandler={this.searchHandler} />
+          <PhoneListing
+            searchResults={this.state.searchResults}
+            handleSelect={this.handleSelect}
+            handleLocation={this.handleLocation}
+          />
+        </div>
+      );
+    }
+
     if (this.state.searchResults.length === 0) {
       return (
         <div>
@@ -145,7 +164,7 @@ class App extends React.Component {
       );
     }
     return (
-      <div>
+      <div className="containter">
         <Search searchHandler={this.searchHandler} />
         <Listing
           handleSelect={this.handleSelect}
