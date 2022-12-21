@@ -1,3 +1,4 @@
+require('dotenv').config()
 const mongoose = require('mongoose')
 const express = require('express');
 const bodyParser = require('body-parser');
@@ -50,9 +51,7 @@ app.listen(PORT, () => {
   console.log(`listening on port ${PORT}`);
 });
 
-const uri = 'mongodb+srv://kyle:fecmongo@mvpcluster.kba0n.mongodb.net/fec-listing-details?retryWrites=true&w=majority'
-
-const db = mongoose.connect(uri, {useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true})
+const db = mongoose.connect(process.env.MONGODB_URI, {useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true})
 
 mongoose.connection.on("error", function(error) {
   console.log(error)
