@@ -47,4 +47,4 @@ npm run build
 npm start
 ``
 
-go to http://localhost:4000 to start your search
+go to http://localhost:4000 to start your listing search
